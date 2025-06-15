@@ -11,21 +11,21 @@ const projects = [
   {
     title: "Cloud Infrastructure Automation",
     description: "Automated cloud infrastructure deployment using Terraform and AWS",
-    image: "/projects/cloud-infra.jpg",
+    image: "/placeholder.svg",
     tags: ["AWS", "Terraform", "DevOps"],
     link: "#"
   },
   {
     title: "CI/CD Pipeline Optimization",
     description: "Streamlined CI/CD pipeline reducing deployment time by 60%",
-    image: "/projects/cicd.jpg",
+    image: "/placeholder.svg",
     tags: ["Jenkins", "Docker", "Kubernetes"],
     link: "#"
   },
   {
     title: "Monitoring System",
     description: "Real-time monitoring solution with Prometheus and Grafana",
-    image: "/projects/monitoring.jpg",
+    image: "/placeholder.svg",
     tags: ["Prometheus", "Grafana", "Alerting"],
     link: "#"
   }
