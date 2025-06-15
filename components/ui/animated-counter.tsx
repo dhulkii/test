@@ -1,30 +1,55 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { useCountUp } from "@/hooks/useCountUp"
-import { useIntersectionObserver } from "@/hooks/useIntersectionObserver"
+import { useEffect, useRef, useState } from "react"
+import { useScrollAnimation } from "@/hooks/useScrollAnimation"
+import { cn } from "@/lib/utils"
 
 interface AnimatedCounterProps {
-  value: number
-  suffix?: string
+  end: number
   duration?: number
+  prefix?: string
+  suffix?: string
   className?: string
+  decimals?: number
 }
 
-export function AnimatedCounter({ value, suffix = "", duration = 2000, className = "" }: AnimatedCounterProps) {
-  const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.5 })
-  const count = useCountUp({ end: value, duration, trigger: isIntersecting })
+export function AnimatedCounter({
+  end,
+  duration = 2000,
+  prefix = "",
+  suffix = "",
+  className,
+  decimals = 0,
+}: AnimatedCounterProps) {
+  const [count, setCount] = useState(0)
+  const { ref, isVisible } = useScrollAnimation()
+  const hasAnimated = useRef(false)
+
+  useEffect(() => {
+    if (isVisible && !hasAnimated.current) {
+      hasAnimated.current = true
+      let start = 0
+      const increment = end / (duration / 16) // 60fps
+
+      const timer = setInterval(() => {
+        start += increment
+        if (start >= end) {
+          setCount(end)
+          clearInterval(timer)
+        } else {
+          setCount(start)
+        }
+      }, 16)
+
+      return () => clearInterval(timer)
+    }
+  }, [isVisible, end, duration])
 
   return (
-    <motion.span
-      ref={ref}
-      className={className}
-      initial={{ opacity: 0, scale: 0.5 }}
-      animate={isIntersecting ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
-      transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-    >
-      {count.toLocaleString()}
+    <span ref={ref} className={cn("inline-block", className)}>
+      {prefix}
+      {count.toFixed(decimals)}
       {suffix}
-    </motion.span>
+    </span>
   )
 }
