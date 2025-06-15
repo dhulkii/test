@@ -1,7 +1,7 @@
 "use client"
 
-import { motion, useAnimation } from 'framer-motion'
-import { useEffect, useRef } from 'react'
+import { motion, useMotionValue, useAnimationFrame } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
 
 interface AnimatedCounterProps {
   end: number
@@ -11,24 +11,22 @@ interface AnimatedCounterProps {
 }
 
 export function AnimatedCounter({ end, duration = 2, className = '', suffix = '' }: AnimatedCounterProps) {
-  const controls = useAnimation()
   const nodeRef = useRef<HTMLSpanElement>(null)
+  const motionValue = useMotionValue(0)
+  const [display, setDisplay] = useState(0)
 
   useEffect(() => {
-    controls.start({
-      count: end,
-      transition: { duration, ease: 'easeInOut' },
-    })
-  }, [end, duration, controls])
+    const controls = motionValue.animate(end, { duration, ease: 'easeInOut' })
+    return controls.stop
+  }, [end, duration, motionValue])
+
+  useAnimationFrame(() => {
+    setDisplay(Math.round(motionValue.get()))
+  })
 
   return (
-    <motion.span
-      ref={nodeRef}
-      className={className}
-      initial={{ count: 0 }}
-      animate={controls}
-    >
-      {Math.round(end)}{suffix}
+    <motion.span ref={nodeRef} className={className}>
+      {display}{suffix}
     </motion.span>
   )
 } 
