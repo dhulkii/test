@@ -1,21 +1,23 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-const tags = [
+type TagColor = 'blue' | 'green' | 'orange' | 'yellow' | 'purple';
+
+const tags: { label: string; color: TagColor }[] = [
   { label: 'Cloud Engineer', color: 'blue' },
   { label: 'DevOps Engineer', color: 'green' },
   { label: 'Automation', color: 'orange' },
   { label: 'Security', color: 'yellow' },
   { label: 'Infra as Code', color: 'purple' },
-]
+];
 
-const tagColorMap = {
+const tagColorMap: Record<TagColor, string> = {
   blue: 'bg-accent-blue',
   green: 'bg-accent-green',
   orange: 'bg-accent-orange',
   yellow: 'bg-accent-yellow',
   purple: 'bg-accent-purple',
-}
+};
 
 const tagPositionMap = [
   { top: '10%', left: '10%' },
@@ -23,7 +25,7 @@ const tagPositionMap = [
   { top: '20%', left: '80%' },
   { top: '60%', left: '20%' },
   { top: '40%', left: '50%' },
-]
+];
 
 export function HeroSection() {
   return (
