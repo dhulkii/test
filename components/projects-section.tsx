@@ -35,6 +35,7 @@ export function ProjectsSection() {
       metrics: ["99.9% Uptime", "10M+ Daily Predictions", "50% Cost Reduction"],
       featured: true,
       gradient: "from-teal-400 to-sky-500",
+      image: "/placeholder.svg",
     },
     {
       id: "rag-chatbot",
@@ -45,6 +46,7 @@ export function ProjectsSection() {
       metrics: ["<100ms Response", "10K+ Concurrent Users", "Auto-scaling"],
       featured: true,
       gradient: "from-sky-400 to-emerald-500",
+      image: "/placeholder.svg",
     },
   ]
 
