@@ -3,34 +3,65 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-const socials = [
-  { name: 'LinkedIn', url: 'https://linkedin.com/in/muhammeddhulkifli', icon: '🔗' },
-  { name: 'GitHub', url: 'https://github.com/muhammeddhulkifli', icon: '🐙' },
-  { name: 'Medium', url: 'https://medium.com/@muhammeddhulkifli', icon: '✍️' },
+type SocialColor = 'blue' | 'black' | 'purple';
+
+const socials: { name: string; url: string; color: SocialColor }[] = [
+  { name: 'LinkedIn', url: 'https://linkedin.com/in/muhammeddhulkifli', color: 'blue' },
+  { name: 'GitHub', url: 'https://github.com/muhammeddhulkifli', color: 'black' },
+  { name: 'Medium', url: 'https://medium.com/@muhammeddhulkifli', color: 'purple' },
 ]
+
+const colorMap: Record<SocialColor, string> = {
+  blue: 'accent-blue',
+  black: 'accent-black',
+  purple: 'accent-purple',
+}
 
 export function ContactSection() {
   return (
     <motion.section
       id="contact"
-      className="py-24 bg-background-base text-center"
+      className="py-32 bg-background-base text-center"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
-      <h2 className="font-display text-4xl font-bold mb-8 text-accent-teal">Contact</h2>
-      <form className="max-w-xl mx-auto grid gap-6 mb-8 bg-background-soft rounded-2xl p-8 shadow-card">
+      <h2 className="font-display text-4xl font-bold mb-12 text-accent-teal">Contact</h2>
+      <motion.form
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+        className="max-w-xl mx-auto grid gap-6 mb-12 bg-background-soft rounded-2xl p-8 shadow-card"
+      >
         <input type="text" placeholder="Your Name" className="p-4 rounded-xl border border-border-soft focus:ring-2 focus:ring-accent-teal outline-none transition" required />
         <input type="email" placeholder="Your Email" className="p-4 rounded-xl border border-border-soft focus:ring-2 focus:ring-accent-teal outline-none transition" required />
         <textarea placeholder="Your Message" rows={4} className="p-4 rounded-xl border border-border-soft focus:ring-2 focus:ring-accent-teal outline-none transition" required />
         <button type="submit" className="bg-accent-teal text-white font-bold py-3 rounded-xl shadow-card hover:bg-accent-sky transition">Send Message</button>
-      </form>
-      <div className="flex flex-wrap gap-4 justify-center">
-        <a href="/resume.pdf" download className="inline-block bg-accent-sky text-white font-semibold px-6 py-3 rounded-xl shadow hover:bg-accent-teal transition mb-6">Download Resume</a>
-        <a href="https://linkedin.com/in/muhammeddhulkifli" target="_blank" rel="noopener" className="inline-block bg-white border-2 border-accent-sky text-accent-sky font-semibold px-6 py-3 rounded-xl shadow hover:bg-accent-sky hover:text-white transition mb-6">LinkedIn</a>
-        <a href="https://github.com/dhulkii" target="_blank" rel="noopener" className="inline-block bg-white border-2 border-accent-teal text-accent-teal font-semibold px-6 py-3 rounded-xl shadow hover:bg-accent-teal hover:text-white transition mb-6">GitHub</a>
-      </div>
+      </motion.form>
+      <motion.div
+        className="flex flex-wrap gap-4 justify-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        transition={{ staggerChildren: 0.1, delayChildren: 0.3 }}
+      >
+        {socials.map((social) => (
+          <motion.a
+            key={social.name}
+            href={social.url}
+            target="_blank"
+            rel="noopener"
+            className={`inline-block border-2 border-${colorMap[social.color]} text-${colorMap[social.color]} font-semibold px-6 py-3 rounded-xl shadow hover:bg-${colorMap[social.color]}/10 hover:text-white transition mb-6 bg-white`}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {social.name}
+          </motion.a>
+        ))}
+      </motion.div>
     </motion.section>
   )
 } 
