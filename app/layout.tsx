@@ -28,12 +28,12 @@ export const metadata: Metadata = {
     "Jenkins",
     "Cloud Architecture",
   ],
-  authors: [{ name: "Muhammed Dhulkifli K", url: "https://yourwebsite.com" }],
+  authors: [{ name: "Muhammed Dhulkifli K", url: "https://muhammeddhulkifli.com" }],
   creator: "Muhammed Dhulkifli K",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://yourwebsite.com",
+    url: "https://muhammeddhulkifli.com",
     title: "Muhammed Dhulkifli K - DevOps & Cloud Engineer",
     description:
       "Senior DevOps & Cloud Engineer specializing in AWS, Kubernetes, and modern infrastructure automation.",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     description:
       "Senior DevOps & Cloud Engineer specializing in AWS, Kubernetes, and modern infrastructure automation.",
     images: ["/og-image.jpg"],
-    creator: "@yourusername",
+    creator: "@muhammeddhulkifli",
   },
   robots: {
     index: true,
@@ -78,11 +78,11 @@ const jsonLd = {
   name: "Muhammed Dhulkifli K",
   jobTitle: "DevOps & Cloud Engineer",
   description: "Senior DevOps & Cloud Engineer specializing in AWS, Kubernetes, and modern infrastructure automation.",
-  url: "https://yourwebsite.com",
+  url: "https://muhammeddhulkifli.com",
   sameAs: [
-    "https://linkedin.com/in/yourprofile",
-    "https://github.com/yourusername",
-    "https://medium.com/@yourusername",
+    "https://linkedin.com/in/muhammeddhulkifli",
+    "https://github.com/muhammeddhulkifli",
+    "https://medium.com/@muhammeddhulkifli",
   ],
   knowsAbout: [
     "DevOps",

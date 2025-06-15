@@ -7,8 +7,12 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
-    domains: ['your-image-domain.com'], // Add your image domains here
+    domains: [
+      'muhammeddhulkifli.com',
+      'github.com',
+      'linkedin.com',
+      'medium.com'
+    ],
   },
 }
 
