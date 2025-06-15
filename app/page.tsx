@@ -102,10 +102,10 @@ export default function Home() {
       <section id="contact" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">
-            Let's Work Together
+            Let&apos;s Work Together
           </h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            I'm always open to discussing new projects, creative ideas or
+            I&apos;m always open to discussing new projects, creative ideas or
             opportunities to be part of your vision.
           </p>
           <GradientButton size="lg">
