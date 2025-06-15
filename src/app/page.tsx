@@ -3,6 +3,7 @@
 import React from 'react'
 import { Navigation } from '../components/navigation'
 import { HeroSection } from '../components/hero-section'
+import { SummarySection } from '../components/summary-section'
 import { AboutSection } from '../components/about-section'
 import { SkillsSection } from '../components/skills-section'
 import { ProjectsSection } from '../components/projects-section'
@@ -17,6 +18,7 @@ export default function Home() {
     <>
       <Navigation />
       <HeroSection />
+      <SummarySection />
       <AboutSection />
       <SkillsSection />
       <ProjectsSection />
