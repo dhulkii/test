@@ -7,10 +7,24 @@ html {
 }
 
 body {
-  background: linear-gradient(135deg, #10141A 0%, #1A2233 100%);
+  background: linear-gradient(120deg, #FFF8F0 0%, #FFF3E6 100%);
   min-height: 100vh;
-  color: #F8FAFC;
+  color: #3B2F2F;
+  font-family: 'Nunito', 'Poppins', 'Inter', sans-serif;
   transition: background 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* Fun cursor */
+body, button, a, input, textarea {
+  cursor: url('https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f60a.png'), auto;
+}
+
+/* Bouncy transitions for buttons */
+button, .fun-bounce {
+  transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s;
+}
+button:active, .fun-bounce:active {
+  transform: scale(0.96) rotate(-2deg);
 }
 
 .glass {
