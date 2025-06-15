@@ -1,84 +1,56 @@
 "use client"
 
+import React from 'react'
 import { motion } from 'framer-motion'
 
 const projects = [
   {
     title: 'AI Prediction System',
-    description: 'CI/CD + CloudWatch + SonarQube + secure AWS',
-    image: '/placeholder.svg',
-    tags: ['AWS', 'CI/CD', 'CloudWatch', 'SonarQube'],
-    link: '#',
+    stack: 'Python, AWS, CI/CD, CloudWatch, SonarQube',
+    description: 'Automated ML pipeline with secure AWS infra and code quality checks.',
   },
   {
-    title: 'RAG Chatbot',
-    description: 'Auto-scaling AWS + Redis + ELK',
-    image: '/placeholder.svg',
-    tags: ['AWS', 'Redis', 'ELK'],
-    link: '#',
+    title: 'RAG AI Chatbot',
+    stack: 'Auto-scaling infra, Redis, ELK',
+    description: 'Scalable chatbot with real-time monitoring and logging.',
   },
   {
     title: 'Go Booking App',
-    description: 'RDS + CloudFront + monitoring',
-    image: '/placeholder.svg',
-    tags: ['RDS', 'CloudFront', 'Monitoring'],
-    link: '#',
+    stack: 'RDS, CloudFront, Go app monitoring',
+    description: 'Booking platform with robust infra and observability.',
   },
   {
     title: 'Laravel CRM',
-    description: 'Aurora + Redis + SSM + encrypted backup',
-    image: '/placeholder.svg',
-    tags: ['Aurora', 'Redis', 'SSM'],
-    link: '#',
+    stack: 'Aurora DB, Redis, secure SSM, encrypted backup',
+    description: 'Enterprise CRM with secure cloud-native architecture.',
   },
 ]
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-4">
-        <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="font-display text-4xl md:text-5xl font-bold mb-12 text-center"
-        >
-          Featured Projects
-        </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, idx) => (
-            <motion.a
-              key={project.title}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 40, rotateY: 10 }}
-              whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
-              whileHover={{ scale: 1.04, rotateY: 2 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: idx * 0.1, type: 'spring' }}
-              className="group block bg-background-soft rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-300"
-            >
-              <div className="relative aspect-video overflow-hidden">
-                <img src={project.image} alt={project.title} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" />
-              </div>
-              <div className="p-6">
-                <h3 className="font-display text-2xl font-bold mb-2 group-hover:text-accent-teal transition-colors duration-200">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-2">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="px-3 py-1 bg-accent-teal/10 text-accent-teal rounded-full text-xs font-medium">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <span className="inline-block text-accent-sky font-semibold text-sm mt-2 group-hover:underline">View Project →</span>
-              </div>
-            </motion.a>
-          ))}
-        </div>
+    <motion.section
+      id="projects"
+      className="py-24 bg-background-soft text-center"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+    >
+      <h2 className="text-4xl font-bold mb-8 text-accent-teal">Projects</h2>
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map((project) => (
+          <motion.div
+            key={project.title}
+            whileHover={{ scale: 1.04, boxShadow: '0 4px 32px 0 rgba(20,184,166,0.10)' }}
+            className="group bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all border border-gray-100 text-left cursor-pointer"
+          >
+            <h3 className="text-xl font-bold mb-2 text-accent-sky group-hover:text-accent-teal transition-colors">{project.title}</h3>
+            <p className="text-gray-600 mb-2">{project.stack}</p>
+            <p className="text-gray-700 mb-4">{project.description}</p>
+            <span className="inline-block text-accent-teal font-semibold group-hover:underline">View Details →</span>
+          </motion.div>
+        ))}
       </div>
-    </section>
+    </motion.section>
   )
 } 

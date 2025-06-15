@@ -1,59 +1,40 @@
 "use client"
 
+import React from 'react'
 import { motion } from 'framer-motion'
 
 const skills = [
-  { name: 'AWS', icon: '☁️', color: 'teal' },
-  { name: 'Terraform', icon: '🏗️', color: 'sky' },
-  { name: 'EKS', icon: '🧩', color: 'electric' },
-  { name: 'Docker', icon: '🐳', color: 'teal' },
-  { name: 'Jenkins', icon: '🤖', color: 'sky' },
-  { name: 'GitHub Actions', icon: '⚙️', color: 'electric' },
-  { name: 'Prometheus', icon: '📈', color: 'teal' },
-  { name: 'ELK', icon: '📊', color: 'sky' },
-  { name: 'Trivy', icon: '🔒', color: 'electric' },
-  { name: 'CrowdSec', icon: '🛡️', color: 'teal' },
-  { name: 'SonarQube', icon: '🧪', color: 'sky' },
-  { name: 'Redis', icon: '🟥', color: 'electric' },
-  { name: 'Aurora', icon: '💡', color: 'teal' },
-  { name: 'CloudWatch', icon: '⏱️', color: 'sky' },
+  { category: 'DevOps', items: ['CI/CD', 'Infrastructure Automation', 'Cloud Security', 'Monitoring', 'Deployment'] },
+  { category: 'Tools', items: ['Jenkins', 'GitHub Actions', 'Terraform', 'Docker', 'Kubernetes (EKS)', 'SonarQube', 'Prometheus', 'ELK stack', 'CrowdSec', 'Trivy'] },
+  { category: 'Cloud Platforms', items: ['AWS (EC2, S3, RDS, Lambda, IAM, CloudFront, CloudWatch, SSM)'] },
 ]
-
-const colorMap: Record<string, string> = {
-  teal: 'bg-accent-teal/10 text-accent-teal border-accent-teal/20 hover:bg-accent-teal/20',
-  sky: 'bg-accent-sky/10 text-accent-sky border-accent-sky/20 hover:bg-accent-sky/20',
-  electric: 'bg-accent-electric/10 text-accent-electric border-accent-electric/20 hover:bg-accent-electric/20',
-}
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="py-24 bg-background-soft">
-      <div className="max-w-5xl mx-auto px-4">
-        <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="font-display text-4xl md:text-5xl font-bold mb-12 text-center"
-        >
-          Skills & Tools
-        </motion.h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-          {skills.map((skill, idx) => (
-            <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.05 }}
-              className={`group flex flex-col items-center justify-center p-6 rounded-2xl border shadow-sm font-medium text-lg transition-all duration-300 hover:scale-105 cursor-pointer ${colorMap[skill.color]}`}
-            >
-              <span className="text-3xl mb-2">{skill.icon}</span>
-              <span>{skill.name}</span>
-            </motion.div>
-          ))}
-        </div>
+    <motion.section
+      id="skills"
+      className="py-24 bg-white text-center"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+    >
+      <h2 className="text-4xl font-bold mb-8 text-accent-teal">Skills</h2>
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        {skills.map((group) => (
+          <div key={group.category} className="bg-background-soft rounded-xl p-6 shadow-md">
+            <h3 className="text-xl font-semibold mb-4 text-accent-sky">{group.category}</h3>
+            <ul className="space-y-2">
+              {group.items.map((item) => (
+                <li key={item} className="text-gray-700 flex items-center gap-2">
+                  <span className="inline-block w-2 h-2 bg-accent-teal rounded-full" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
-    </section>
+    </motion.section>
   )
 } 
