@@ -8,27 +8,35 @@ const projects = [
     title: 'AI Prediction System',
     stack: 'Python, AWS, CI/CD, CloudWatch, SonarQube',
     description: 'Automated ML pipeline with secure AWS infra and code quality checks.',
-    color: 'accent-blue',
+    color: 'blue',
   },
   {
     title: 'RAG AI Chatbot',
     stack: 'Auto-scaling infra, Redis, ELK',
     description: 'Scalable chatbot with real-time monitoring and logging.',
-    color: 'accent-green',
+    color: 'green',
   },
   {
     title: 'Go Booking App',
     stack: 'RDS, CloudFront, Go app monitoring',
     description: 'Booking platform with robust infra and observability.',
-    color: 'accent-orange',
+    color: 'orange',
   },
   {
     title: 'Laravel CRM',
     stack: 'Aurora DB, Redis, secure SSM, encrypted backup',
     description: 'Enterprise CRM with secure cloud-native architecture.',
-    color: 'accent-purple',
+    color: 'purple',
   },
 ]
+
+const cardColorMap = {
+  blue: 'bg-accent-blue',
+  green: 'bg-accent-green',
+  orange: 'bg-accent-orange',
+  yellow: 'bg-accent-yellow',
+  purple: 'bg-accent-purple',
+}
 
 export function ProjectsSection() {
   return (
@@ -42,7 +50,7 @@ export function ProjectsSection() {
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: i * 0.1, ease: 'easeOut' }}
-            className={`rounded-2xl md:rounded-[2.5rem] p-10 md:p-14 shadow-cardHover bg-${project.color} text-white flex flex-col items-start justify-between min-h-[320px]`}
+            className={`rounded-2xl md:rounded-[2.5rem] p-8 md:p-14 shadow-cardHover text-white flex flex-col items-start justify-between min-h-[320px] ${cardColorMap[project.color as keyof typeof cardColorMap]}`}
             style={{ boxShadow: '0 8px 32px 0 rgba(59,130,246,0.12)' }}
           >
             <h3 className="font-display text-2xl md:text-3xl font-bold mb-4 uppercase tracking-tight">{project.title}</h3>

@@ -2,11 +2,27 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 const tags = [
-  { label: 'Cloud Engineer', color: 'accent-blue' },
-  { label: 'DevOps Engineer', color: 'accent-green' },
-  { label: 'Automation', color: 'accent-orange' },
-  { label: 'Security', color: 'accent-yellow' },
-  { label: 'Infra as Code', color: 'accent-purple' },
+  { label: 'Cloud Engineer', color: 'blue' },
+  { label: 'DevOps Engineer', color: 'green' },
+  { label: 'Automation', color: 'orange' },
+  { label: 'Security', color: 'yellow' },
+  { label: 'Infra as Code', color: 'purple' },
+]
+
+const tagColorMap = {
+  blue: 'bg-accent-blue',
+  green: 'bg-accent-green',
+  orange: 'bg-accent-orange',
+  yellow: 'bg-accent-yellow',
+  purple: 'bg-accent-purple',
+}
+
+const tagPositionMap = [
+  { top: '10%', left: '10%' },
+  { top: '70%', left: '85%' },
+  { top: '20%', left: '80%' },
+  { top: '60%', left: '20%' },
+  { top: '40%', left: '50%' },
 ]
 
 export function HeroSection() {
@@ -14,22 +30,28 @@ export function HeroSection() {
     <section id="hero" className="relative min-h-[80vh] flex flex-col items-center justify-center bg-background-base overflow-hidden">
       {/* Floating Tags */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
-        <div className="relative w-full max-w-4xl h-64 mx-auto">
+        <div className="relative w-full max-w-4xl h-64 mx-auto hidden md:block">
           {tags.map((tag, i) => (
             <motion.div
               key={tag.label}
               initial={{ opacity: 0, scale: 0.8, y: 40 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ delay: 0.2 + i * 0.1, duration: 0.7, type: 'spring' }}
-              className={`tag absolute z-10 bg-${tag.color} shadow-tag`}
+              className={`tag absolute z-10 ${tagColorMap[tag.color]} shadow-tag`}
               style={{
-                top: ["10%", "70%", "20%", "60%", "40%"][i],
-                left: ["5%", "80%", "15%", "70%", "50%"][i],
+                top: tagPositionMap[i].top,
+                left: tagPositionMap[i].left,
                 transform: 'translate(-50%, -50%)',
               }}
             >
               {tag.label}
             </motion.div>
+          ))}
+        </div>
+        {/* On mobile, show tags in a row below the headline */}
+        <div className="flex flex-wrap gap-2 justify-center md:hidden mt-4 w-full">
+          {tags.map((tag) => (
+            <span key={tag.label} className={`tag ${tagColorMap[tag.color]} shadow-tag text-sm px-3 py-1`}>{tag.label}</span>
           ))}
         </div>
       </div>
@@ -39,7 +61,7 @@ export function HeroSection() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="font-display text-[2.8rem] md:text-[5rem] font-bold uppercase leading-none tracking-tight text-text-main mb-4"
+          className="font-display text-[2.2rem] md:text-[5rem] font-bold uppercase leading-none tracking-tight text-text-main mb-4"
           style={{ letterSpacing: '-0.04em' }}
         >
           Muhammed Dhulkifli K
@@ -48,7 +70,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
-          className="text-lg md:text-2xl text-text-secondary max-w-2xl mx-auto mb-8"
+          className="text-base md:text-2xl text-text-secondary max-w-2xl mx-auto mb-8"
         >
           DevOps & Cloud Engineer — Building secure, scalable, and automated infrastructure.
         </motion.p>
