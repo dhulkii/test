@@ -20,11 +20,11 @@ const tagColorMap: Record<TagColor, string> = {
 };
 
 const tagPositionMap = [
-  { top: '8%', left: '20%' },
-  { top: '80%', left: '78%' },
-  { top: '20%', left: '85%' },
-  { top: '70%', left: '25%' },
-  { top: '30%', left: '60%' },
+  { top: '10%', left: '22%' },
+  { top: '92%', left: '82%' },
+  { top: '18%', left: '88%' },
+  { top: '60%', left: '20%' },
+  { top: '12%', left: '68%' },
 ];
 
 const containerVariants = {
