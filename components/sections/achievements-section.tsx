@@ -103,7 +103,7 @@ export function AchievementsSection() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.4, 0, 0.2, 1],
+        ease: "easeInOut",
       },
     },
   }
@@ -159,7 +159,7 @@ export function AchievementsSection() {
                 {/* Counter */}
                 <div className="text-center mb-4">
                   <div className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent mb-2">
-                    <AnimatedCounter value={achievement.value} suffix={achievement.suffix} duration={2500} />
+                    <AnimatedCounter end={achievement.value} suffix={achievement.suffix} duration={2500} />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">{achievement.label}</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">{achievement.description}</p>
@@ -184,21 +184,21 @@ export function AchievementsSection() {
           <div className="inline-flex items-center gap-8 px-8 py-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl border border-blue-100">
             <div className="text-center">
               <div className="text-2xl font-bold text-blue-600">
-                <AnimatedCounter value={5} suffix="+" />
+                <AnimatedCounter end={5} suffix="+" />
               </div>
               <div className="text-sm text-gray-600">Years Experience</div>
             </div>
             <div className="w-px h-8 bg-gray-300" />
             <div className="text-center">
               <div className="text-2xl font-bold text-purple-600">
-                <AnimatedCounter value={50} suffix="+" />
+                <AnimatedCounter end={50} suffix="+" />
               </div>
               <div className="text-sm text-gray-600">Projects Completed</div>
             </div>
             <div className="w-px h-8 bg-gray-300" />
             <div className="text-center">
               <div className="text-2xl font-bold text-green-600">
-                <AnimatedCounter value={100} suffix="%" />
+                <AnimatedCounter end={100} suffix="%" />
               </div>
               <div className="text-sm text-gray-600">Client Satisfaction</div>
             </div>
