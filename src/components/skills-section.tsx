@@ -2,8 +2,8 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaAws, FaJenkins, FaGithub, FaDocker, FaKubernetes, FaPrometheus, FaShieldAlt, FaDatabase, FaGitAlt, FaLinux, FaMedium, FaNginx } from 'react-icons/fa';
-import { SiTerraform, SiAnsible, SiGithubactions, SiGrafana, SiElastic, SiLogstash, SiKibana, SiMysql, SiPostgresql, SiMongodb, SiRedis, SiSonarqube, SiBoto3, SiTrivy, SiCrowdsec, SiShell, SiAmazonrds, SiAmazoncloudwatch, SiAmazoneks, SiModsecurity } from 'react-icons/si';
+import { FaAws, FaJenkins, FaGithub, FaDocker, FaShieldAlt, FaDatabase, FaGitAlt, FaLinux, FaMedium } from 'react-icons/fa';
+import { SiTerraform, SiAnsible, SiGithubactions, SiGrafana, SiElastic, SiMysql, SiPostgresql, SiMongodb, SiRedis, SiSonarqube, SiTrivy, SiShell, SiAmazoncloudwatch } from 'react-icons/si';
 
 const skills = [
   {
@@ -114,11 +114,7 @@ const skillIcons: Record<string, JSX.Element> = {
   'GitHub Actions': <SiGithubactions className="inline mr-2" />,
   'Shell Scripting (Bash)': <SiShell className="inline mr-2" />,
   'Docker': <FaDocker className="inline mr-2" />,
-  'Kubernetes (EKS)': <FaKubernetes className="inline mr-2" />,
-  'Docker Compose': <FaDocker className="inline mr-2" />,
-  'Prometheus': <FaPrometheus className="inline mr-2" />,
   'Grafana': <SiGrafana className="inline mr-2" />,
-  'Loki': <SiGrafana className="inline mr-2" />,
   'Promtail': <SiGrafana className="inline mr-2" />,
   'AWS CloudWatch': <SiAmazoncloudwatch className="inline mr-2" />,
   'ELK Stack (Elasticsearch, Logstash, Kibana)': <SiElastic className="inline mr-2" />,
@@ -127,9 +123,7 @@ const skillIcons: Record<string, JSX.Element> = {
   'IAM Policies': <FaShieldAlt className="inline mr-2" />,
   'Security Groups': <FaShieldAlt className="inline mr-2" />,
   'Fail2Ban': <FaShieldAlt className="inline mr-2" />,
-  'CrowdSec': <SiCrowdsec className="inline mr-2" />,
   'Trivy': <SiTrivy className="inline mr-2" />,
-  'ModSecurity': <SiModsecurity className="inline mr-2" />,
   'PostgreSQL': <SiPostgresql className="inline mr-2" />,
   'MySQL': <SiMysql className="inline mr-2" />,
   'MongoDB': <SiMongodb className="inline mr-2" />,
@@ -138,8 +132,6 @@ const skillIcons: Record<string, JSX.Element> = {
   'Git': <FaGitAlt className="inline mr-2" />,
   'GitHub': <FaGithub className="inline mr-2" />,
   'SonarQube': <SiSonarqube className="inline mr-2" />,
-  'Nginx': <FaNginx className="inline mr-2" />,
-  'Boto3 (AWS SDK)': <SiBoto3 className="inline mr-2" />,
   'Linux Administration': <FaLinux className="inline mr-2" />,
   'Medium Blogging': <FaMedium className="inline mr-2" />,
 };
