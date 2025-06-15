@@ -79,7 +79,7 @@ export function AboutSection() {
             About <span className="text-gradient">Me</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            I'm a passionate DevOps engineer who believes that great infrastructure should be invisible to users but
+            I&apos;m a passionate DevOps engineer who believes that great infrastructure should be invisible to users but
             powerful enough to scale any ambition.
           </p>
         </div>

@@ -75,10 +75,10 @@ export function ContactSection() {
           className={`text-center mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
         >
           <h2 className="font-display text-4xl sm:text-5xl font-bold mb-6">
-            Let's Build Something <span className="text-gradient">Amazing</span>
+            Let&apos;s Build Something <span className="text-gradient">Amazing</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Ready to scale your infrastructure or discuss your next cloud project? I'd love to hear about your
+            Ready to scale your infrastructure or discuss your next cloud project? I&apos;d love to hear about your
             challenges and explore how we can solve them together.
           </p>
         </div>
