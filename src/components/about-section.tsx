@@ -36,11 +36,11 @@ export function AboutSection() {
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
-      <h2 className="text-4xl font-bold mb-8 text-accent-teal">About Me</h2>
-      <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-6">
+      <h2 className="font-display text-4xl font-bold mb-8 text-accent-teal">About Me</h2>
+      <p className="text-lg text-text-main max-w-2xl mx-auto mb-6">
         DevOps & Cloud Engineer passionate about automation, security, and building scalable infrastructure. Currently at IOCOD InfoTech, I help teams deliver robust, secure, and efficient cloud solutions.
       </p>
-      <ul className="flex flex-wrap justify-center gap-6 text-base text-gray-600 max-w-3xl mx-auto">
+      <ul className="flex flex-wrap justify-center gap-6 text-base text-text-secondary max-w-3xl mx-auto">
         <li>⚡ Automation & CI/CD</li>
         <li>🔒 Cloud Security</li>
         <li>🌐 Scalable Infrastructure</li>

@@ -36,17 +36,17 @@ export function ProjectsSection() {
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
-      <h2 className="text-4xl font-bold mb-8 text-accent-teal">Projects</h2>
+      <h2 className="font-display text-4xl font-bold mb-8 text-accent-teal">Projects</h2>
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project) => (
           <motion.div
             key={project.title}
             whileHover={{ scale: 1.04, boxShadow: '0 4px 32px 0 rgba(20,184,166,0.10)' }}
-            className="group bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all border border-gray-100 text-left cursor-pointer"
+            className="group bg-white rounded-2xl p-6 shadow-card hover:shadow-2xl transition-all border border-border-soft text-left cursor-pointer"
           >
-            <h3 className="text-xl font-bold mb-2 text-accent-sky group-hover:text-accent-teal transition-colors">{project.title}</h3>
-            <p className="text-gray-600 mb-2">{project.stack}</p>
-            <p className="text-gray-700 mb-4">{project.description}</p>
+            <h3 className="text-xl font-bold mb-2 text-accent-sky group-hover:text-accent-teal transition-colors font-display">{project.title}</h3>
+            <p className="text-text-secondary mb-2">{project.stack}</p>
+            <p className="text-text-main mb-4">{project.description}</p>
             <span className="inline-block text-accent-teal font-semibold group-hover:underline">View Details →</span>
           </motion.div>
         ))}
