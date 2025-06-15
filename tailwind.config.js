@@ -23,8 +23,8 @@ module.exports = {
         'border-soft': '#E5E7EB',
       },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
-        display: ['Sora', 'ui-sans-serif'],
+        sans: ['Manrope', 'Inter', 'ui-sans-serif', 'system-ui'],
+        display: ['Playfair Display', 'Sora', 'ui-serif', 'serif'],
       },
       boxShadow: {
         card: '0 4px 24px 0 rgba(24,26,27,0.08)',
