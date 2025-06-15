@@ -8,6 +8,7 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    domains: ['your-image-domain.com'], // Add your image domains here
   },
 }
 
