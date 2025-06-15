@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useMotionValue, useAnimationFrame } from 'framer-motion'
+import { motion, useMotionValue, useAnimationFrame, animate } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 
 interface AnimatedCounterProps {
@@ -16,7 +16,11 @@ export function AnimatedCounter({ end, duration = 2, className = '', suffix = ''
   const [display, setDisplay] = useState(0)
 
   useEffect(() => {
-    const controls = motionValue.animate(end, { duration, ease: 'easeInOut' })
+    const controls = animate(motionValue.get(), end, {
+      duration,
+      ease: 'easeInOut',
+      onUpdate: (latest: number) => motionValue.set(latest),
+    })
     return controls.stop
   }, [end, duration, motionValue])
 
