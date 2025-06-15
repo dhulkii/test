@@ -1,74 +1,9 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-type TagColor = 'blue' | 'green' | 'orange' | 'yellow' | 'purple';
-
-const tags: { label: string; color: TagColor }[] = [
-  { label: 'Cloud Engineer', color: 'blue' },
-  { label: 'DevOps Engineer', color: 'green' },
-  { label: 'Automation', color: 'orange' },
-  { label: 'Security', color: 'yellow' },
-  { label: 'Infra as Code', color: 'purple' },
-];
-
-const tagColorMap: Record<TagColor, string> = {
-  blue: 'bg-accent-blue',
-  green: 'bg-accent-green',
-  orange: 'bg-accent-orange',
-  yellow: 'bg-accent-yellow',
-  purple: 'bg-accent-purple',
-};
-
-const tagPositionMap = [
-  { top: '10%', left: '22%' },
-  { top: '92%', left: '82%' },
-  { top: '18%', left: '88%' },
-  { top: '60%', left: '20%' },
-  { top: '12%', left: '68%' },
-];
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const tagVariants = {
-  hidden: { opacity: 0, scale: 0.8, y: 40 },
-  visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', duration: 0.7 } },
-};
-
 export function HeroSection() {
   return (
     <section id="hero" className="relative min-h-[80vh] flex flex-col items-center justify-center bg-background-base overflow-hidden">
-      {/* Floating Tags (desktop only) */}
-      <motion.div
-        className="absolute inset-0 pointer-events-none select-none hidden md:block"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <div className="relative w-full max-w-5xl h-[400px] mx-auto">
-          {tags.map((tag, i) => (
-            <motion.div
-              key={tag.label}
-              variants={tagVariants}
-              className={`tag absolute z-10 ${tagColorMap[tag.color]} shadow-tag text-base px-4 py-2 font-semibold`}
-              style={{
-                top: tagPositionMap[i].top,
-                left: tagPositionMap[i].left,
-                transform: 'translate(-50%, -50%)',
-              }}
-            >
-              {tag.label}
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
       {/* Hero Content */}
       <motion.div
         className="relative z-20 flex flex-col items-center justify-center text-center pt-36 pb-20 w-full"
@@ -94,23 +29,6 @@ export function HeroSection() {
         >
           Muhammed Dhulkifli K
         </motion.h1>
-        {/* Tags below headline on mobile */}
-        <motion.div
-          className="flex flex-wrap gap-2 justify-center md:hidden mb-8"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          {tags.map((tag) => (
-            <motion.span
-              key={tag.label}
-              variants={tagVariants}
-              className={`tag ${tagColorMap[tag.color]} shadow-tag text-sm px-3 py-1 font-semibold`}
-            >
-              {tag.label}
-            </motion.span>
-          ))}
-        </motion.div>
         <motion.p
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -121,14 +39,14 @@ export function HeroSection() {
         </motion.p>
         <motion.div
           className="flex flex-wrap gap-4 justify-center mt-2"
-          variants={containerVariants}
+          variants={{}}
           initial="hidden"
           animate="visible"
         >
           <motion.a
             href="/resume.pdf"
             className="px-7 py-3 rounded-xl font-bold text-white bg-accent-black shadow-card hover:bg-text-main transition-colors duration-200 border-2 border-accent-black"
-            variants={tagVariants}
+            variants={{}}
           >
             View Resume
           </motion.a>
@@ -137,7 +55,7 @@ export function HeroSection() {
             target="_blank"
             rel="noopener"
             className="px-7 py-3 rounded-xl font-bold text-accent-black border-2 border-accent-black bg-white hover:bg-accent-black/10 transition-colors duration-200"
-            variants={tagVariants}
+            variants={{}}
           >
             GitHub
           </motion.a>
@@ -146,7 +64,7 @@ export function HeroSection() {
             target="_blank"
             rel="noopener"
             className="px-7 py-3 rounded-xl font-bold text-accent-blue border-2 border-accent-blue bg-white hover:bg-accent-blue/10 transition-colors duration-200"
-            variants={tagVariants}
+            variants={{}}
           >
             LinkedIn
           </motion.a>
@@ -155,7 +73,7 @@ export function HeroSection() {
             target="_blank"
             rel="noopener"
             className="px-7 py-3 rounded-xl font-bold text-accent-purple border-2 border-accent-purple bg-white hover:bg-accent-purple/10 transition-colors duration-200"
-            variants={tagVariants}
+            variants={{}}
           >
             Medium
           </motion.a>
