@@ -4,11 +4,11 @@ import { Inter, Sora } from 'next/font/google'
 import type { Metadata } from 'next'
 
 const inter = Inter({ subsets: ['latin'], weight: ['400', '700'], variable: '--font-inter' })
-const sora = Sora({ subsets: ['latin'], weight: ['400', '700'], variable: '--font-sora' })
+const sora = Sora({ subsets: ['latin'], weight: ['700'], variable: '--font-sora' })
 
 export const metadata: Metadata = {
   title: 'Muhammed Dhulkifli K | Portfolio',
-  description: 'DevOps & Cloud Engineer Portfolio — Modern, Professional, and Elegant.',
+  description: 'DevOps & Cloud Engineer Portfolio — Modern, Minimal, and Premium. Inspired by fuwad.design.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
