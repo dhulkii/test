@@ -77,6 +77,14 @@ export function HeroSection() {
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
+        {/* Profile Photo */}
+        <div className="flex justify-center mb-6">
+          <img
+            src="/profile.jpg"
+            alt="Muhammed Dhulkifli K profile photo"
+            className="w-28 h-28 md:w-36 md:h-36 rounded-full object-cover border-4 border-white shadow-lg bg-gray-200"
+          />
+        </div>
         <motion.h1
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -134,7 +142,7 @@ export function HeroSection() {
             GitHub
           </motion.a>
           <motion.a
-            href="https://linkedin.com/in/muhammeddhulkifli"
+            href="https://www.linkedin.com/in/muhammed-dhulkifli-k-5a42772b7/"
             target="_blank"
             rel="noopener"
             className="px-7 py-3 rounded-xl font-bold text-accent-blue border-2 border-accent-blue bg-white hover:bg-accent-blue/10 transition-colors duration-200"
@@ -143,7 +151,7 @@ export function HeroSection() {
             LinkedIn
           </motion.a>
           <motion.a
-            href="https://medium.com/@muhammeddhulkifli"
+            href="https://medium.com/@muhammeddhulkiflik"
             target="_blank"
             rel="noopener"
             className="px-7 py-3 rounded-xl font-bold text-accent-purple border-2 border-accent-purple bg-white hover:bg-accent-purple/10 transition-colors duration-200"

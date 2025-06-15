@@ -6,9 +6,9 @@ import { motion } from 'framer-motion'
 type SocialColor = 'blue' | 'black' | 'purple';
 
 const socials: { name: string; url: string; color: SocialColor }[] = [
-  { name: 'LinkedIn', url: 'https://linkedin.com/in/muhammeddhulkifli', color: 'blue' },
-  { name: 'GitHub', url: 'https://github.com/muhammeddhulkifli', color: 'black' },
-  { name: 'Medium', url: 'https://medium.com/@muhammeddhulkifli', color: 'purple' },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/muhammed-dhulkifli-k-5a42772b7/', color: 'blue' },
+  { name: 'GitHub', url: 'https://github.com/dhulkii', color: 'black' },
+  { name: 'Medium', url: 'https://medium.com/@muhammeddhulkiflik', color: 'purple' },
 ]
 
 const colorMap: Record<SocialColor, string> = {
