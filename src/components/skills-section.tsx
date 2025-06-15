@@ -2,6 +2,8 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import { FaAws, FaJenkins, FaGithub, FaDocker, FaKubernetes, FaPrometheus, FaShieldAlt, FaDatabase, FaGitAlt, FaLinux, FaMedium, FaNginx } from 'react-icons/fa';
+import { SiTerraform, SiAnsible, SiGithubactions, SiGrafana, SiElastic, SiLogstash, SiKibana, SiMysql, SiPostgresql, SiMongodb, SiRedis, SiSonarqube, SiBoto3, SiTrivy, SiCrowdsec, SiShell, SiAmazonrds, SiAmazoncloudwatch, SiAmazoneks, SiModsecurity } from 'react-icons/si';
 
 const skills = [
   {
@@ -104,6 +106,44 @@ const cardVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
 }
 
+const skillIcons: Record<string, JSX.Element> = {
+  'AWS (EC2, S3, RDS, EKS, SQS, Lambda, CloudWatch, IAM, VPC, ALB, Auto Scaling)': <FaAws className="inline mr-2" />,
+  'Terraform': <SiTerraform className="inline mr-2" />,
+  'Ansible': <SiAnsible className="inline mr-2" />,
+  'Jenkins': <FaJenkins className="inline mr-2" />,
+  'GitHub Actions': <SiGithubactions className="inline mr-2" />,
+  'Shell Scripting (Bash)': <SiShell className="inline mr-2" />,
+  'Docker': <FaDocker className="inline mr-2" />,
+  'Kubernetes (EKS)': <FaKubernetes className="inline mr-2" />,
+  'Docker Compose': <FaDocker className="inline mr-2" />,
+  'Prometheus': <FaPrometheus className="inline mr-2" />,
+  'Grafana': <SiGrafana className="inline mr-2" />,
+  'Loki': <SiGrafana className="inline mr-2" />,
+  'Promtail': <SiGrafana className="inline mr-2" />,
+  'AWS CloudWatch': <SiAmazoncloudwatch className="inline mr-2" />,
+  'ELK Stack (Elasticsearch, Logstash, Kibana)': <SiElastic className="inline mr-2" />,
+  'VPC Peering': <FaShieldAlt className="inline mr-2" />,
+  'SSH Tunneling': <FaShieldAlt className="inline mr-2" />,
+  'IAM Policies': <FaShieldAlt className="inline mr-2" />,
+  'Security Groups': <FaShieldAlt className="inline mr-2" />,
+  'Fail2Ban': <FaShieldAlt className="inline mr-2" />,
+  'CrowdSec': <SiCrowdsec className="inline mr-2" />,
+  'Trivy': <SiTrivy className="inline mr-2" />,
+  'ModSecurity': <SiModsecurity className="inline mr-2" />,
+  'PostgreSQL': <SiPostgresql className="inline mr-2" />,
+  'MySQL': <SiMysql className="inline mr-2" />,
+  'MongoDB': <SiMongodb className="inline mr-2" />,
+  'Redis': <SiRedis className="inline mr-2" />,
+  'Aurora': <FaDatabase className="inline mr-2" />,
+  'Git': <FaGitAlt className="inline mr-2" />,
+  'GitHub': <FaGithub className="inline mr-2" />,
+  'SonarQube': <SiSonarqube className="inline mr-2" />,
+  'Nginx': <FaNginx className="inline mr-2" />,
+  'Boto3 (AWS SDK)': <SiBoto3 className="inline mr-2" />,
+  'Linux Administration': <FaLinux className="inline mr-2" />,
+  'Medium Blogging': <FaMedium className="inline mr-2" />,
+};
+
 export function SkillsSection() {
   return (
     <motion.section
@@ -127,9 +167,10 @@ export function SkillsSection() {
               {group.items.map((item) => (
                 <span
                   key={item}
-                  className={`tag ${group.color} shadow-tag text-sm px-4 py-2 font-semibold bg-${group.color} text-white`}
+                  className={`tag ${group.color} shadow-tag text-sm px-4 py-2 font-semibold bg-${group.color} text-white flex items-center`}
                   style={{ fontWeight: 600 }}
                 >
+                  {skillIcons[item] && <span className="mr-1">{skillIcons[item]}</span>}
                   {item}
                 </span>
               ))}
