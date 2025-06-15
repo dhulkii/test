@@ -20,11 +20,11 @@ const tagColorMap: Record<TagColor, string> = {
 };
 
 const tagPositionMap = [
-  { top: '12%', left: '18%' },
-  { top: '78%', left: '78%' },
-  { top: '28%', left: '85%' },
-  { top: '65%', left: '22%' },
-  { top: '38%', left: '52%' },
+  { top: '8%', left: '20%' },
+  { top: '80%', left: '78%' },
+  { top: '20%', left: '85%' },
+  { top: '70%', left: '25%' },
+  { top: '30%', left: '60%' },
 ];
 
 const containerVariants = {
@@ -71,14 +71,14 @@ export function HeroSection() {
       </motion.div>
       {/* Hero Content */}
       <motion.div
-        className="relative z-20 flex flex-col items-center justify-center text-center pt-28 pb-20 w-full"
+        className="relative z-20 flex flex-col items-center justify-center text-center pt-36 pb-20 w-full"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
         {/* Profile Photo */}
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-10">
           <img
             src="/profile.jpg"
             alt="Muhammed Dhulkifli K profile photo"
