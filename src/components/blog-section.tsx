@@ -22,19 +22,19 @@ export function BlogSection() {
   return (
     <motion.section
       id="blog"
-      className="py-24 bg-white text-center"
+      className="py-24 bg-background-base text-center"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
-      <h2 className="text-4xl font-bold mb-8 text-accent-teal">Blog</h2>
+      <h2 className="font-display text-4xl font-bold mb-8 text-accent-teal">Blog</h2>
       <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         {posts.map((post) => (
-          <a key={post.title} href={post.link} target="_blank" rel="noopener" className="block bg-background-soft rounded-xl p-6 shadow-md hover:shadow-lg transition-all text-left">
+          <a key={post.title} href={post.link} target="_blank" rel="noopener" className="block bg-background-soft rounded-2xl p-6 shadow-card hover:shadow-lg transition-all text-left">
             <img src={post.image} alt={post.title} className="w-full h-40 object-cover rounded-lg mb-4" />
-            <h3 className="text-xl font-semibold text-accent-sky mb-2">{post.title}</h3>
-            <p className="text-gray-700 mb-2">{post.snippet}</p>
+            <h3 className="text-xl font-semibold text-accent-sky mb-2 font-display">{post.title}</h3>
+            <p className="text-text-main mb-2">{post.snippet}</p>
             <span className="text-accent-teal font-semibold">Read More →</span>
           </a>
         ))}

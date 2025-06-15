@@ -17,12 +17,12 @@ export function CertificationsSection() {
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
-      <h2 className="text-4xl font-bold mb-8 text-accent-teal">Certifications</h2>
+      <h2 className="font-display text-4xl font-bold mb-8 text-accent-teal">Certifications</h2>
       <div className="flex flex-wrap justify-center gap-8">
         {certifications.map((cert) => (
-          <div key={cert.name} className="bg-white rounded-xl px-8 py-6 shadow-md flex flex-col items-center">
+          <div key={cert.name} className="bg-white rounded-2xl px-8 py-6 shadow-card flex flex-col items-center">
             <span className="text-4xl mb-2">{cert.icon}</span>
-            <span className="text-lg font-semibold text-accent-sky">{cert.name}</span>
+            <span className="text-lg font-semibold text-accent-sky font-display">{cert.name}</span>
           </div>
         ))}
       </div>
